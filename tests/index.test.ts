@@ -25,7 +25,7 @@ describe('Given getPackageManager is called', () => {
 
     it('should return npm', () => {
 
-      (shelljs.exec as any).mockImplementation((x: string) => x === 'npm --version' && { code: 0 })
+      (shelljs.exec as any).mockImplementation((x: string) => x === 'npm --version > /dev/null 2>&1' && { code: 0 })
       expect(getPackageManager()).toEqual('npm')
 
     })
@@ -36,7 +36,7 @@ describe('Given getPackageManager is called', () => {
 
     it('should return yarn', () => {
 
-      (shelljs.exec as any).mockImplementation((x:string) => x === 'yarn --version' && { code: 0 })
+      (shelljs.exec as any).mockImplementation((x:string) => x === 'yarn --version > /dev/null 2>&1' && { code: 0 })
       expect(getPackageManager()).toEqual('yarn')
 
     })
@@ -47,7 +47,7 @@ describe('Given getPackageManager is called', () => {
 
     it('should return pnpm', () => {
 
-      (shelljs.exec as any).mockImplementation((x:string) => x === 'pnpm --version' && { code: 0 })
+      (shelljs.exec as any).mockImplementation((x:string) => x === 'pnpm --version > /dev/null 2>&1' && { code: 0 })
       expect(getPackageManager()).toEqual('pnpm')
 
     })
