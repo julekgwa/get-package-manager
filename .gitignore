@@ -222,7 +222,8 @@ terraform.rc
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
-
+tests/index.test.d.ts
+tests/index.test.js
 package
 # if you are NOT using Zero-installs, then:
 # comment the following lines
