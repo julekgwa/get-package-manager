@@ -1,8 +1,8 @@
 {
   "exclude": ["./tests/*"],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
+    "target": "ES2019",
+    "module": "CommonJS",
     "outDir": "./out/cjs",
     "rootDir": "./src",
     "strict": true,

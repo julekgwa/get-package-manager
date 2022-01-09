@@ -16,7 +16,8 @@ export default [
       external(),
       resolve(),
       terser()
-    ]
+    ],
+    external: ['shelljs']
   },
   {
     input: './out/es/index.js',
