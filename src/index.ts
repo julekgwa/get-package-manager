@@ -1,9 +1,10 @@
 import { exec } from 'shelljs'
-import { Prefer } from './types';
+import { Prefer } from './types'
 
+export function getPackageManager (pkg?: Prefer): string {
 
-export function getPackageManager(pkg?: Prefer): string {
   const prefer = pkg?.prefer || ''
+
   switch (true) {
     case prefer && exec(`${prefer} --verion`).code === 0:
       return prefer
@@ -16,4 +17,5 @@ export function getPackageManager(pkg?: Prefer): string {
     default:
       return 'Unknown'
   }
+
 }

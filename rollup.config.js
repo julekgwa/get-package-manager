@@ -1,7 +1,7 @@
-import resolve from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve'
 
-import external from 'rollup-plugin-peer-deps-external';
-import {terser} from 'rollup-plugin-terser';
+import external from 'rollup-plugin-peer-deps-external'
+import { terser } from 'rollup-plugin-terser'
 
 export default [
   {
@@ -16,7 +16,7 @@ export default [
       external(),
       resolve(),
       terser()
-    ],
+    ]
   },
   {
     input: './dist/es/index.js',
@@ -33,4 +33,4 @@ export default [
     ],
     external: ['shelljs']
   }
-];
+]

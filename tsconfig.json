@@ -1,11 +1,12 @@
 {
-  "exclude": ["./test/*"],
+  "exclude": ["./tests/*"],
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
     "declaration": true,
     "outDir": "./dist/cjs",
     "rootDir": "./src",
-    "strict": true
+    "strict": true,
+    "moduleResolution": "node"
   }
 }
