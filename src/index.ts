@@ -1,10 +1,9 @@
 import { exec } from 'shelljs'
-import { Prefer } from './types'
 
 function runExec (command: string): boolean {
   return exec(`${command} > /dev/null 2>&1`).code === 0
 }
-export function getPackageManager (pkg?: Prefer): string {
+export function getPackageManager (pkg?: { prefer: string }): string {
 
   const prefer = pkg?.prefer || ''
 

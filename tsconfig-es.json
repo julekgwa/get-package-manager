@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
       "module": "esnext",
-      "outDir": "dist/es",
-      "target": "esnext"
+      "outDir": "out/es",
+      "target": "esnext",
+      "declarationDir": "out/dts",
+      "declaration": true,
   }
 }

@@ -3,10 +3,10 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "declaration": true,
-    "outDir": "./dist/cjs",
+    "outDir": "./out/cjs",
     "rootDir": "./src",
     "strict": true,
-    "moduleResolution": "node"
+    "declaration": false,
+    "moduleResolution": "node",
   }
 }
