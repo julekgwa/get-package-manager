@@ -1,0 +1,52 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@3.0.1
+
+jobs:
+  build:
+    working_directory: ~/backend_api
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-npm
+      - node/install-packages:
+          app-dir: ~/backend_api
+          cache-path: node_modules
+          override-ci-command: npm i
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  test:
+    docker:
+      - image: cimg/node:current
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Test
+          command: npm test
+
+  coveralls:
+    docker:
+      - image: cimg/node:current
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Coverage
+          command: npm run coveralls
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - coveralls:
+          requires:
+              - test
+      - test:
+          requires:
+            - build
