@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "description": "Get installed node package manager",
   "types": "dist/es/index.d.ts",
   "license": "MIT",
   "files": [
