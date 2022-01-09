@@ -1,6 +1,6 @@
 {
   "name": "get-package-manager",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "description": "Get installed node package manager",
